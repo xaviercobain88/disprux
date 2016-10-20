@@ -1,0 +1,38 @@
+{
+  "name": "redux-cep",
+  "version": "0.0.0",
+  "description": "Command/Event Proxy for Redux",
+  "main": "/dist/CepMiddleware.js",
+  "scripts": {
+    "pretest": "tsc --module commonjs  --p test",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xaviercobain88/redux-cep.git"
+  },
+  "keywords": [
+    "react",
+    "command",
+    "event",
+    "cqrs",
+    "proxy",
+    "redux"
+  ],
+  "author": "Xavier Ramírez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xaviercobain88/redux-cep/issues"
+  },
+  "homepage": "https://github.com/xaviercobain88/redux-cep#readme",
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "redux": "^3.6.0",
+    "typescript": "^2.0.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "typescript-definition-tester": "0.0.4"
+  }
+}
