@@ -30,13 +30,13 @@ describe('CepMiddleware', function () {
         }
     }
     __decorate([
-        HandlerOf_1.default(ACTION_TYPE), 
+        HandlerOf_1.HandlerOf(ACTION_TYPE), 
         __metadata('design:type', Function), 
         __metadata('design:paramtypes', [Object]), 
         __metadata('design:returntype', void 0)
     ], Test.prototype, "foo", null);
     __decorate([
-        HandlerOf_1.default(ACTION_TYPE), 
+        HandlerOf_1.HandlerOf(ACTION_TYPE), 
         __metadata('design:type', Function), 
         __metadata('design:paramtypes', [Object]), 
         __metadata('design:returntype', void 0)
@@ -47,7 +47,7 @@ describe('CepMiddleware', function () {
         }
     }
     __decorate([
-        HandlerOf_1.default(ACTION_TYPE), 
+        HandlerOf_1.HandlerOf(ACTION_TYPE), 
         __metadata('design:type', Function), 
         __metadata('design:paramtypes', [Object]), 
         __metadata('design:returntype', void 0)
@@ -58,7 +58,7 @@ describe('CepMiddleware', function () {
         }
     }
     __decorate([
-        HandlerOf_1.default(ACTION_TYPE2), 
+        HandlerOf_1.HandlerOf(ACTION_TYPE2), 
         __metadata('design:type', Function), 
         __metadata('design:paramtypes', [Object]), 
         __metadata('design:returntype', void 0)

@@ -2,7 +2,7 @@
   "name": "redux-cep",
   "version": "0.0.0",
   "description": "Command/Event Proxy for Redux",
-  "main": "/dist/CepMiddleware.js",
+  "main": "/dist/index.js",
   "scripts": {
     "pretest": "tsc --module commonjs  --p test",
     "test": "mocha"
@@ -33,6 +33,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.1.2",
+    "tsd": "^0.6.5",
     "typescript-definition-tester": "0.0.4"
   }
 }

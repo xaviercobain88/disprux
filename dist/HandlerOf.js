@@ -8,6 +8,5 @@ function HandlerOf(...actionTypes) {
         actionTypes.forEach(actionType => HandlerContainer_1.default.addHandler(actionType, [descriptor.value, target.constructor.name]));
     };
 }
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = HandlerOf;
+exports.HandlerOf = HandlerOf;
 //# sourceMappingURL=HandlerOf.js.map

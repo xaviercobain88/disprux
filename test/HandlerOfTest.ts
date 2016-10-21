@@ -5,7 +5,7 @@
 /// <reference path="../typings/chai/chai.d.ts" />
 import {assert} from 'chai';
 import HandlerContainer from "../src/HandlerContainer";
-import HandlerOf from "../src/HandlerOf";
+import {HandlerOf} from "../src/HandlerOf";
 import {Map, List} from 'immutable';
 import {IHandlerFunction} from "../src/IHandlerFunction";
 
@@ -14,7 +14,7 @@ describe('HandlerOfTest', function () {
     const ACTION_TYPE = "ACTION_TYPE";
 
     before(function () {
-        
+
         HandlerContainer.handlerMap = Map<string,List<[IHandlerFunction, string]>>();
     });
 

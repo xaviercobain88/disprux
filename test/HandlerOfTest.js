@@ -28,7 +28,7 @@ describe('HandlerOfTest', function () {
             }
         }
         __decorate([
-            HandlerOf_1.default(ACTION_TYPE), 
+            HandlerOf_1.HandlerOf(ACTION_TYPE), 
             __metadata('design:type', Function), 
             __metadata('design:paramtypes', []), 
             __metadata('design:returntype', void 0)
@@ -42,7 +42,7 @@ describe('HandlerOfTest', function () {
             }
         }
         __decorate([
-            HandlerOf_1.default(ACTION_TYPE), 
+            HandlerOf_1.HandlerOf(ACTION_TYPE), 
             __metadata('design:type', Function), 
             __metadata('design:paramtypes', []), 
             __metadata('design:returntype', void 0)
@@ -55,7 +55,7 @@ describe('HandlerOfTest', function () {
             }
         }
         __decorate([
-            HandlerOf_1.default(ACTION_TYPE), 
+            HandlerOf_1.HandlerOf(ACTION_TYPE), 
             __metadata('design:type', Function), 
             __metadata('design:paramtypes', []), 
             __metadata('design:returntype', void 0)
@@ -65,7 +65,7 @@ describe('HandlerOfTest', function () {
             }
         }
         __decorate([
-            HandlerOf_1.default(ACTION_TYPE), 
+            HandlerOf_1.HandlerOf(ACTION_TYPE), 
             __metadata('design:type', Function), 
             __metadata('design:paramtypes', []), 
             __metadata('design:returntype', void 0)

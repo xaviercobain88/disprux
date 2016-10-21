@@ -6,7 +6,7 @@
  */
 import {assert} from 'chai';
 import {CepMiddleware} from "../src/CepMiddleware";
-import HandlerOf from "../src/HandlerOf";
+import {HandlerOf} from "../src/HandlerOf";
 import {createStore, applyMiddleware, compose, Action} from 'redux';
 
 
