@@ -2,6 +2,9 @@
  * Created by xavier on 10/21/16.
  */
 
-export {CepMiddleware} from "./CepMiddleware";
-export {HandlerOf} from "./HandlerOf";
-export {IHandlerFunction} from "./IHandlerFunction";
+
+import {CepMiddleware} from "./CepMiddleware";
+import {HandlerOf} from "./HandlerOf";
+import {IHandlerFunction} from "./IHandlerFunction";
+
+export default {CepMiddleware, HandlerOf, IHandlerFunction}
