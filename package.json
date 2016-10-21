@@ -2,7 +2,7 @@
   "name": "redux-cep",
   "version": "0.0.1",
   "description": "Command/Event Proxy for Redux",
-  "main": "/dist/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "pretest": "tsc --module commonjs  --p test",
     "test": "mocha"
