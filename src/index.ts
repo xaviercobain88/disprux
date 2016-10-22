@@ -6,5 +6,6 @@
 import {CepMiddleware} from "./CepMiddleware";
 import {HandlerOf} from "./HandlerOf";
 
-export default {CepMiddleware, HandlerOf}
+export   const CepMiddleware
+export   const HandlerOf
 

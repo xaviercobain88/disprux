@@ -3,6 +3,7 @@
   "version": "0.0.6",
   "description": "Command/Event Proxy for Redux",
   "main": "lib/index.js",
+  "typings": "lib/index",
   "scripts": {
     "pretest": "tsc --module commonjs  --p test",
     "test": "mocha",
