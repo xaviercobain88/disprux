@@ -1,12 +1,10 @@
 "use strict";
-const HandlerContainer_1 = require("./HandlerContainer");
 /**
  * Created by xavier on 10/17/16.
  */
+const decoratorReflection_1 = require('./decoratorReflection');
 function HandlerOf(...actionTypes) {
-    return function (target, propertyKey, descriptor) {
-        actionTypes.forEach(actionType => HandlerContainer_1.default.addHandler(actionType, [descriptor.value, target.constructor.name]));
-    };
+    return decoratorReflection_1.default("HandlerOf", actionTypes);
 }
 exports.HandlerOf = HandlerOf;
 //# sourceMappingURL=HandlerOf.js.map

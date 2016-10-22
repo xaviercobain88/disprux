@@ -47,22 +47,11 @@ describe('CepMiddleware', function () {
         }
     }
     __decorate([
-        HandlerOf_1.HandlerOf(ACTION_TYPE), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [Object]), 
-        __metadata('design:returntype', void 0)
-    ], Test2.prototype, "foo", null);
-    class Test3 {
-        foo(action) {
-            action.foo3 = true;
-        }
-    }
-    __decorate([
         HandlerOf_1.HandlerOf(ACTION_TYPE2), 
         __metadata('design:type', Function), 
         __metadata('design:paramtypes', [Object]), 
         __metadata('design:returntype', void 0)
-    ], Test3.prototype, "foo", null);
+    ], Test2.prototype, "foo", null);
     let spyAction = { type: ACTION_TYPE, foo: false, foo2: false, foo3: false };
     let spyAction2 = { type: ACTION_TYPE2, foo: false, foo2: false, foo3: false };
     it('must set spyAction\'s fields foo, foo2 to true and foo3 to false (no handled) when ' +
@@ -82,7 +71,7 @@ describe('CepMiddleware', function () {
         'ActionTypes(ACTION_TYPE1, ACTION_TYPE2) set', function (done) {
         let store = redux_1.createStore((state, action) => {
             return {};
-        }, {}, redux_1.applyMiddleware(CepMiddleware_1.CepMiddleware(Test, Test3)));
+        }, {}, redux_1.applyMiddleware(CepMiddleware_1.CepMiddleware(Test, Test2)));
         store.dispatch(spyAction2);
         setTimeout(() => {
             chai_1.assert(!spyAction2.foo);

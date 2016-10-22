@@ -5,6 +5,6 @@
 
 import {CepMiddleware} from "./CepMiddleware";
 import {HandlerOf} from "./HandlerOf";
-import {IHandlerFunction} from "./IHandlerFunction";
 
-export default {CepMiddleware, HandlerOf, IHandlerFunction}
+export default {CepMiddleware, HandlerOf}
+

@@ -30,13 +30,6 @@ describe('CepMiddleware', function () {
         }
     }
     class Test2 {
-        @HandlerOf(ACTION_TYPE)
-        foo(action:SpyAction) {
-            action.foo3 = true;
-        }
-
-    }
-    class Test3 {
         @HandlerOf(ACTION_TYPE2)
         foo(action:SpyAction) {
             action.foo3 = true;
@@ -72,9 +65,9 @@ describe('CepMiddleware', function () {
                 return {};
             },
             {},
-            applyMiddleware(CepMiddleware(Test, Test3)));
+            applyMiddleware(CepMiddleware(Test, Test2)));
         store.dispatch(spyAction2);
-
+    
         setTimeout(()=> {
             assert(!spyAction2.foo);
             assert(!spyAction2.foo2);

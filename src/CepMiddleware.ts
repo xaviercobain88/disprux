@@ -1,22 +1,25 @@
 import {Middleware, MiddlewareAPI, Action, Dispatch} from "redux/index";
-import HandlerContainer from "./HandlerContainer";
-import {IHandlerFunction} from "./IHandlerFunction";
-import {Iterable, List, Map} from 'immutable';
+import {List} from 'immutable';
+import {Annotation} from './decoratorReflection'
+import {HandlerOf} from './HandlerOf'
 /**
  * Created by xavier on 10/15/16.
  */
 
 
-export const CepMiddleware = (...handlers:any[]):Middleware => {
-    let verifiedHandlers = HandlerContainer.handlerMap.map((tupleList, actionType)=> {
-        return [actionType, tupleList.filter(tuple=>handlers.map(handler=>handler.name)
-            .indexOf(tuple[1]) > -1).map(tuple=>tuple[0]).toList()];
-    }).toMap();
+export const CepMiddleware = (...handlers:any[]):any => {
+
+    let handlerList = List(handlers).filter(handler=>handler.prototype.decorators);
 
     return (store:MiddlewareAPI<any>) => (next:Dispatch<any>) => (action:Action) => {
-        verifiedHandlers.filter((functionList, actionType)=>actionType == action.type).map(tuple=>tuple[1])
-            .forEach((functionList:List<IHandlerFunction>)=>functionList
-                .forEach(handlerFunction=>handlerFunction(action, store.dispatch, store.getState())));
+        
+        handlerList.forEach(handler=>handler.prototype.decorators
+            .forEach((annotation:Annotation)=> {
+                if (annotation.args[0] == action.type && annotation.name === HandlerOf.prototype.constructor.name) {
+                    handler.prototype[annotation.propertyKey](action, store.dispatch, store.getState())
+                }
+            }));
+
         next(action);
     };
 
