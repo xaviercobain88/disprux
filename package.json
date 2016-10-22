@@ -1,6 +1,6 @@
 {
   "name": "redux-cep",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Command/Event Proxy for Redux",
   "main": "lib/index.js",
   "typings": "lib/index",
