@@ -3,8 +3,8 @@
  */
 
 
-import {CepMiddleware} from "./CepMiddleware";
-import {HandlerOf} from "./HandlerOf";
+import cepMiddleware from "./cepMiddleware";
+import { HandlerOf } from "./HandlerOf";
 
-export {CepMiddleware, HandlerOf}
+export { cepMiddleware, HandlerOf }
 

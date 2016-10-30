@@ -35,6 +35,8 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
-/.idea/
-/lib/
-/es/
+.idea
+lib
+es
+.vscode
+coverage
