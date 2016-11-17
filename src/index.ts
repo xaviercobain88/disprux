@@ -3,8 +3,11 @@
  */
 
 
-import cepMiddleware from "./cepMiddleware";
+import {pruxDecomposer} from "./pruxDecomposer";
 import { HandlerOf } from "./HandlerOf";
+import { ReducerOf } from "./ReducerOf";
+import { Path } from "./Path";
+import { ReducerByName } from "./ReducerByName";
 
-export { cepMiddleware, HandlerOf }
+export { HandlerOf, pruxDecomposer, ReducerOf, Path, ReducerByName }
 

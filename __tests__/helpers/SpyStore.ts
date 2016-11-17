@@ -1,4 +1,5 @@
 import { Action, Store, Reducer } from 'redux'
+import * as _ from 'lodash'
 export class SpyStore<S> implements Store<S>{
 
     state: S
@@ -10,7 +11,13 @@ export class SpyStore<S> implements Store<S>{
     }
 
     dispatch(action: Action) {
-        this.spy.push(action)
+        if(_.isUndefined(this)) {
+            console.log("******", this)
+        }
+        else{
+            this.spy.push(action)
+        }
+        
         return action
     }
     getState() {

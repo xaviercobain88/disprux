@@ -40,3 +40,5 @@ lib
 es
 .vscode
 coverage
+.DS_Store
+__tests__/.DS_Store

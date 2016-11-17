@@ -3,6 +3,8 @@
  */
 import { Action, Reducer } from 'redux'
 import * as _ from 'lodash'
+import { Object } from './Object'
+
 let dot = require('dot-prop-immutable')
 
 interface PathResolver {
@@ -10,6 +12,7 @@ interface PathResolver {
 }
 
 const ACTION = "action."
+
 
 const interpolate = <A extends Action>(str: string, action: any) =>
     str.replace(/\${([^}]+)\}/g, (a: string, b: string) => {
@@ -21,8 +24,14 @@ export const ReducerOf = (actionTypes: Array<string>, path?: string | PathResolv
     (target: any, propertyKey: string = null, descriptor: PropertyDescriptor = null) => {
 
         const previousFunctionValue = descriptor.value
+        if (_.isUndefined(target.reducers)) {
+            target.reducers = []
+        }
+        target.reducers.push(propertyKey)
+
 
         descriptor.value = <A extends Action, S>(state: any, action: A) => {
+
 
             let rootPath = _.isUndefined(target.rootPath) ? target.constructor.name : target.rootPath
             if (!_.includes(actionTypes, action.type)) return state
@@ -32,6 +41,7 @@ export const ReducerOf = (actionTypes: Array<string>, path?: string | PathResolv
                     ? rootPath + "." + interpolate(path, action)
                     : rootPath + "." + path(action))
             let specificState = dot.get(state, resolvedPath)
+            
             let newSpecificState = previousFunctionValue(specificState, action)
             return newSpecificState === specificState
                 ? state

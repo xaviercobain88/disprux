@@ -1,4 +1,3 @@
-import decoratorReflection from './decoratorReflection'
 
 interface Object {
     rootPath: string
