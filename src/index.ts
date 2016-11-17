@@ -3,11 +3,11 @@
  */
 
 
-import {pruxDecomposer} from "./pruxDecomposer";
+import {dispruxDecomposer} from "./dispruxDecomposer";
 import { HandlerOf } from "./HandlerOf";
 import { ReducerOf } from "./ReducerOf";
 import { Path } from "./Path";
 import { ReducerByName } from "./ReducerByName";
 
-export { HandlerOf, pruxDecomposer, ReducerOf, Path, ReducerByName }
+export { HandlerOf, dispruxDecomposer, ReducerOf, Path, ReducerByName }
 

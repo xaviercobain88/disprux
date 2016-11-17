@@ -1,5 +1,5 @@
 {
-  "name": "dispux",
+  "name": "disprux",
   "version": "0.0.10",
   "description": "Dispatch proxy for Redux",
   "main": "lib/index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xaviercobain88/dispux.git"
+    "url": "git+https://github.com/xaviercobain88/disprux.git"
   },
   "keywords": [
     "react",
@@ -22,9 +22,9 @@
   "author": "Xavier Ramírez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xaviercobain88/dispux/issues"
+    "url": "https://github.com/xaviercobain88/disprux/issues"
   },
-  "homepage": "https://github.com/xaviercobain88/dispux#readme",
+  "homepage": "https://github.com/xaviercobain88/disprux#readme",
   "dependencies": {
     "dot-prop-immutable": "^1.1.2",
     "immutable": "^3.8.1",

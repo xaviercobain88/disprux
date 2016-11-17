@@ -5,7 +5,7 @@ import { NAME } from './ReducerByName'
 import * as _ from 'lodash'
 import { Object } from './Object'
 
-export const pruxDecomposer = (...args: Array<any>) => {
+export const dispruxDecomposer = (...args: Array<any>) => {
 
     let [handlers, observableHandlers, reducers] = args
         .map(clazz => clazz.prototype)
@@ -24,10 +24,10 @@ export const pruxDecomposer = (...args: Array<any>) => {
             , [state, action])[0]
 
 
-    return { pruxMiddleware: pruxMiddlewareFactory(handlers, observableHandlers), rootReducer  }
+    return { pruxMiddleware: dispruxMiddlewareFactory(handlers, observableHandlers), rootReducer  }
 }
 
-const pruxMiddlewareFactory = (handlers: Array<Handler>, observableHandlers: Array<ObservableHandler>) => {
+const dispruxMiddlewareFactory = (handlers: Array<Handler>, observableHandlers: Array<ObservableHandler>) => {
 
     let reduxObservableMiddleware3: EpicMiddleware<any> = createEpicMiddleware(combineEpics(...observableHandlers))
     
