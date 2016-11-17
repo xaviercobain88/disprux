@@ -42,7 +42,7 @@ describe('HandlerOf', function () {
 
     })
 
-    it('must dispatch action$ stream when handler is annotated with an specific actionType and isObservable is true', async () => {
+    it('must dispatch action$ stream when handler is annotated with an specific actionType and isObservable is true', async function() {
 
         let promise = await test.foo3(new ActionsObservable(Observable.from([{ type: Constants.ACTION_TYPE3 }])), spyStore)
             .toPromise()

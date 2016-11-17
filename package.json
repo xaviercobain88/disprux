@@ -1,11 +1,11 @@
 {
-  "name": "redux-cep",
+  "name": "prux",
   "version": "0.0.8",
   "description": "Command/Event Proxy for Redux",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
-    "prepublish": "node_modules/babel-cli/bin/babel.js es --out-dir lib"
+    "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,9 @@
   "author": "Xavier Ramírez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xaviercobain88/redux-cep/issues"
+    "url": "https://github.com/xaviercobain88/prux/issues"
   },
-  "homepage": "https://github.com/xaviercobain88/redux-cep#readme",
+  "homepage": "https://github.com/xaviercobain88/prux#readme",
   "dependencies": {
     "dot-prop-immutable": "^1.1.2",
     "immutable": "^3.8.1",
