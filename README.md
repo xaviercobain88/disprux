@@ -1,2 +1,2 @@
-# redux-cep
-Command/Event Proxy for Redux
+# dispux
+Dispatch proxy for redux
