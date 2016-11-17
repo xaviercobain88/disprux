@@ -24,7 +24,7 @@ export const dispruxDecomposer = (...args: Array<any>) => {
             , [state, action])[0]
 
 
-    return { pruxMiddleware: dispruxMiddlewareFactory(handlers, observableHandlers), rootReducer  }
+    return { dispruxMiddleware: dispruxMiddlewareFactory(handlers, observableHandlers), rootReducer  }
 }
 
 const dispruxMiddlewareFactory = (handlers: Array<Handler>, observableHandlers: Array<ObservableHandler>) => {

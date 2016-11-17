@@ -31,7 +31,7 @@ describe('pruxDecomposer', function () {
 
     describe('pruxMiddleware', function () {
         it('must dispatch every transformed action when action is dispatched', () => {
-            let {pruxMiddleware} = dispruxDecomposer(TestClass4, TestClass5)
+            let {dispruxMiddleware} = dispruxDecomposer(TestClass4, TestClass5)
 
             let rootReducer = (state: any, action: any)=>state
             let dispatchedActions: Array<string> = []
@@ -46,7 +46,7 @@ describe('pruxDecomposer', function () {
                 }
 
             }
-            let store = applyMiddleware(pruxMiddleware)(createStore)(rootReducer, {})
+            let store = applyMiddleware(dispruxMiddleware)(createStore)(rootReducer, {})
 
 
             store.dispatch({type: Constants.ACTION_TYPE1})
