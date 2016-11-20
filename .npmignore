@@ -38,3 +38,7 @@ jspm_packages
 /.idea/
 __tests__
 src
+.vscode
+tsconfig.json
+preprocessor.js
+.npmignore
