@@ -33,21 +33,14 @@ const handlerDecoratorFactory = (actionTypes: Array<string>, previousValue: Hand
 
     }
 
-const handlerArrayInitializer = (target: Object) => {
-    if (_.isUndefined(target.handlers)) {
-        target.handlers = []
-    }
-    if (_.isUndefined(target.observableHandlers)) {
-        target.observableHandlers = []
-    }
-}
 
 export const HandlerOf = (actionTypes: Array<string>, isObservable: boolean = false) =>
     (target: any, propertyKey: string = null, descriptor: PropertyDescriptor = null) => {
 
         const previousValue = descriptor.value
+        Object.initializer(target)
+        
 
-        handlerArrayInitializer(target)
 
         if (isObservable) {
             target.observableHandlers.push(propertyKey)
@@ -56,5 +49,6 @@ export const HandlerOf = (actionTypes: Array<string>, isObservable: boolean = fa
             target.handlers.push(propertyKey)
             descriptor.value = handlerDecoratorFactory(actionTypes, previousValue)
         }
+        target.actionTypesByMethod.set(descriptor.value, actionTypes)
 
     } 

@@ -24,10 +24,9 @@ export const ReducerOf = (actionTypes: Array<string>, path?: string | PathResolv
     (target: any, propertyKey: string = null, descriptor: PropertyDescriptor = null) => {
 
         const previousFunctionValue = descriptor.value
-        if (_.isUndefined(target.reducers)) {
-            target.reducers = []
-        }
+        Object.initializer(target)
         target.reducers.push(propertyKey)
+
 
 
         descriptor.value = <A extends Action, S>(state: any, action: A) => {
@@ -41,12 +40,12 @@ export const ReducerOf = (actionTypes: Array<string>, path?: string | PathResolv
                     ? rootPath + "." + interpolate(path, action)
                     : rootPath + "." + path(action))
             let specificState = dot.get(state, resolvedPath)
-            
+
             let newSpecificState = previousFunctionValue(specificState, action)
             return newSpecificState === specificState
                 ? state
                 : dot.set(state, resolvedPath, newSpecificState)
 
         }
-
+        target.actionTypesByMethod.set(descriptor.value, actionTypes)
     }

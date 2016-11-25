@@ -1,7 +1,4 @@
-
-interface Object {
-    rootPath: string
-}
+import { Object } from './Object'
 
 export const Path = (value: string) =>
     (target: any) => {
