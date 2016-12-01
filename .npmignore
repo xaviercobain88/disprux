@@ -42,5 +42,4 @@ src
 tsconfig.json
 preprocessor.js
 .npmignore
-/examples/chat/server/node_modules
-/examples/chat/mobile_client/node_modules
+/examples
