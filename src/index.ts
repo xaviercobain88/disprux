@@ -3,11 +3,12 @@
  */
 
 
-import { dispruxDecomposer, RealTimeAction, RealTimeManager, dispruxMiddlewareFactory } from "./dispruxDecomposer";
-import { HandlerOf } from "./HandlerOf";
-import { ReducerOf } from "./ReducerOf";
-import { Path } from "./Path";
-import { ReducerByName } from "./ReducerByName";
+import {dispruxDecomposer, RealTimeManager, dispruxMiddlewareFactory} from "./dispruxDecomposer";
+import {RealTimeAction} from './RealTimeAction'
+import {HandlerOf} from "./HandlerOf";
+import {ReducerOf} from "./ReducerOf";
+import {Path} from "./Path";
+import {ReducerByName} from "./ReducerByName";
 
 export {
     HandlerOf,

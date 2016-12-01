@@ -1,6 +1,3 @@
-import * as _ from 'lodash'
-
-
 export abstract class Object {
     handlers: Array<string>
     observableHandlers: Array<string>
@@ -10,17 +7,17 @@ export abstract class Object {
     rootPath: string
 
     static initializer(target: Object) {
-        if (_.isUndefined(target.handlers)) {
+        if (!(target.handlers)) {
             target.handlers = []
         }
-        if (_.isUndefined(target.observableHandlers)) {
+        if (!(target.observableHandlers)) {
             target.observableHandlers = []
         }
 
-        if (_.isUndefined(target.actionTypesByMethod)) {
-            target.actionTypesByMethod = new Map()
+        if (!(target.actionTypesByMethod)) {
+            target.actionTypesByMethod = new Map<any, Array<string>>()
         }
-        if (_.isUndefined(target.reducers)) {
+        if (!(target.reducers)) {
             target.reducers = []
         }
     }

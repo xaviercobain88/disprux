@@ -1,13 +1,14 @@
 /**
  * Created by xavier on 10/17/16.
  */
+declare var require: any
 import { Action, Reducer } from 'redux'
-import * as _ from 'lodash'
+// import * as _ from 'lodash'
 import { Object } from './Object'
 
 let dot = require('dot-prop-immutable')
 
-interface PathResolver {
+export interface PathResolver {
     (action: Action): string
 }
 
@@ -32,9 +33,9 @@ export const ReducerOf = (actionTypes: Array<string>, path?: string | PathResolv
         descriptor.value = <A extends Action, S>(state: any, action: A) => {
 
 
-            let rootPath = _.isUndefined(target.rootPath) ? target.constructor.name : target.rootPath
-            if (!_.includes(actionTypes, action.type)) return state
-            let resolvedPath = _.isUndefined(path)
+            let rootPath = !(target.rootPath) ? target.constructor.name : target.rootPath
+            if (!actionTypes.find(item => item == action.type)) return state
+            let resolvedPath = !(path)
                 ? rootPath
                 : (typeof path === 'string'
                     ? rootPath + "." + interpolate(path, action)

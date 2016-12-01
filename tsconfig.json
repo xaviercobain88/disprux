@@ -1,5 +1,4 @@
 {
-
   "compilerOptions": {
     "outDir": "./es/",
     "noImplicitAny": true,
@@ -8,13 +7,14 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "files":[
+  "files": [
     "src/HandlerOf.ts",
     "src/index.ts",
     "src/Object.ts",
     "src/Path.ts",
     "src/pruxDecomposer.ts",
     "src/ReducerByName.ts",
-    "src/ReducerOf.ts"
+    "src/ReducerOf.ts",
+    "node_modules/typescript/lib/lib.es6.d.ts"
   ]
 }

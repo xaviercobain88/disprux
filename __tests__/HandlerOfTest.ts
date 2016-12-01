@@ -42,7 +42,7 @@ describe('HandlerOf', function () {
 
     })
 
-    it('must dispatch action$ stream when handler is annotated with an specific actionType and isObservable is true', async function() {
+    it('must dispatch action$ stream when handler is annotated with an specific actionType and isObservable is true', async function () {
 
         let promise = await test.foo3(new ActionsObservable(Observable.from([{ type: Constants.ACTION_TYPE3 }])), spyStore)
             .toPromise()
@@ -51,7 +51,7 @@ describe('HandlerOf', function () {
     });
 
     it('must dispatch action$ stream when handler is annotated with an specific actionType ' +
-        'and more actionTypes and isObservable is true', async () => {
+        'and more actionTypes and isObservable is true', async function () {
 
             let promise = await test.foo4(new ActionsObservable(Observable.from([{ type: Constants.ACTION_TYPE4 }])), spyStore)
                 .toPromise()
@@ -61,7 +61,7 @@ describe('HandlerOf', function () {
 
 
 
-    it('must NOT dispatch action$ stream when handler is NOT annotated with an specific actionType and isObservable is true', async () => {
+    it('must NOT dispatch action$ stream when handler is NOT annotated with an specific actionType and isObservable is true', async function () {
 
         let promise = await test.foo3(new ActionsObservable(Observable.from([{ type: Constants.ACTION_TYPE_NOT_SET }])), spyStore)
             .toPromise()

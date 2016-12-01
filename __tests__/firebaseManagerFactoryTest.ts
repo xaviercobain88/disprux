@@ -45,7 +45,7 @@ describe('firebaseManagerFactory', function () {
 
     const timeoutPromise = new Promise((resolve, reject) => setTimeout(() => resolve(true), 1000))
 
-    it('must dispatch onUpdate action type when real time path is updated', async () {
+    it('must dispatch onUpdate action type when real time path is updated', async function () {
         let firebaseDatabase: firebase.database.Database = firebase.initializeApp(config, 't1').database()
         firebaseManagerFactory(firebaseDatabase)(action, fakeStore(dispatchedActions))
         await firebaseDatabase.ref(`${REAL_TIME_PATH}/${ID}/${TIMESTAMP}`).set(Math.random())
@@ -53,7 +53,7 @@ describe('firebaseManagerFactory', function () {
         expect(dispatchedActions).toContain(ON_UPDATE)
         expect(dispatchedActions.length).toBe(1)
     })
-    it('must dispatch onDelete and SUBSCRIPTION_DELETED action type when real time path is removed', async () {
+    it('must dispatch onDelete and SUBSCRIPTION_DELETED action type when real time path is removed', async function() {
         let firebaseDatabase: firebase.database.Database = firebase.initializeApp(config, 't2').database()
         firebaseManagerFactory(firebaseDatabase)(action, fakeStore(dispatchedActions))
         await firebaseDatabase.ref(`${REAL_TIME_PATH}/${ID}/${TIMESTAMP}`).remove()
@@ -63,7 +63,7 @@ describe('firebaseManagerFactory', function () {
         expect(dispatchedActions.length).toBe(2)
     })
 
-    it('must dispatch every on stream update\' action type when stream\'s timestamp is updated', async () {
+    it('must dispatch every on stream update\' action type when stream\'s timestamp is updated', async function() {
         let firebaseDatabase: firebase.database.Database = firebase.initializeApp(config, 't3').database()
         firebaseManagerFactory(firebaseDatabase)(action, fakeStore(dispatchedActions))
         await firebaseDatabase.ref(`${REAL_TIME_PATH}/${ID}/${TIMESTAMP}`).set(Math.random())
@@ -77,7 +77,7 @@ describe('firebaseManagerFactory', function () {
 
     })
 
-    it('must dispatch a single stream update\' action type when a single specific stream\'s timestamp is updated', async () {
+    it('must dispatch a single stream update\' action type when a single specific stream\'s timestamp is updated', async function() {
         let firebaseDatabase: firebase.database.Database = firebase.initializeApp(config, 't4').database()
         firebaseManagerFactory(firebaseDatabase)(action, fakeStore(dispatchedActions))
         await firebaseDatabase.ref(`${REAL_TIME_PATH}/${ID}/${TIMESTAMP}`).set(Math.random())
@@ -89,7 +89,7 @@ describe('firebaseManagerFactory', function () {
 
     })
 
-    it('must omit firebase future changes when firebase ref is removed', async () {
+    it('must omit firebase future changes when firebase ref is removed', async function() {
         let firebaseDatabase: firebase.database.Database = firebase.initializeApp(config, 't5').database()
         firebaseManagerFactory(firebaseDatabase)(action, fakeStore(dispatchedActions))
         await firebaseDatabase.ref(`${REAL_TIME_PATH}/${ID}/${TIMESTAMP}`).remove()
