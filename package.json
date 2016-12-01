@@ -4,8 +4,7 @@
   "description": "Dispatch proxy for Redux",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest  --no-cache --runInBand",
-    "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir lib"
+    "test": "jest  --no-cache --runInBand"
   },
   "repository": {
     "type": "git",
