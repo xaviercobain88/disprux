@@ -9,6 +9,7 @@ import {HandlerOf} from "./HandlerOf";
 import {ReducerOf} from "./ReducerOf";
 import {Path} from "./Path";
 import {ReducerByName} from "./ReducerByName";
+import {firebaseManagerFactory} from './firebaseManagerFactory'
 
 export {
     HandlerOf,
@@ -18,6 +19,7 @@ export {
     ReducerByName,
     RealTimeAction,
     RealTimeManager,
-    dispruxMiddlewareFactory
+    dispruxMiddlewareFactory,
+    firebaseManagerFactory
 }
 
